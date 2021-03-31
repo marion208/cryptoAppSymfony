@@ -1,0 +1,73 @@
+{# dashboardHomePage.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Accueil{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{asset('CSS/style.css')}}" type="text/css" />
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        <nav>
+            <h1 class="titleApp">Crypto Tracker</h1>
+            <a class="link_add_transaction" href="/ajouter-transaction"><img class="imgPlusSign" src="{{asset('images/cross-sign.svg')}}" /></a>
+            <a class="link_remove_transaction" href="/supprimer-transaction"><img class="imgPen" src="{{asset('images/pen.svg')}}" /></a>
+        </nav>
+
+        <div class="showEarnings">
+            <a class="link_graph" href="/graphique-gains">{{ globalEarnings }}</a>
+        </div>
+
+        <table class="gridDashboard">
+                
+                <tr class="rowDashboard">
+            {% for shortnameCrypto in shortnamesCrypto %}
+                <td class="columnDashboard shortnameCrypto">
+                {% if shortnameCrypto == 'BTC' %}
+                    <img class="logoCrypto" src="{{asset('CSS/images/logobitcoin.png')}}" />
+                {% endif %}
+                {% if shortnameCrypto == 'ETH' %}
+                    <img class="logoCrypto" src="{{asset('CSS/images/logoethereum.png')}}" />
+                {% endif %}
+                {% if shortnameCrypto == 'XRP' %}
+                    <img class="logoCrypto" src="{{asset('CSS/images/logoxrp.png')}}" />
+                {% endif %}
+                {{ shortnameCrypto }}
+                </td>
+            {% endfor %}
+                </tr>
+
+                <tr class="rowDashboard">
+            {% for nameCrypto in namesCrypto %}
+                <td class="columnDashboard nameCrypto">({{ nameCrypto }})</td>
+            {% endfor %}
+            </tr>
+
+                <tr class="rowDashboard">
+            {% for evolCryptoString in evol24hString %}
+                <td class="columnDashboard">
+                    {% if evolCryptoString == 'decrease++' %}
+                        <img class="imgDecrease" src="{{asset('CSS/images/back-arrow.svg')}}" /><img class="imgDecrease" src="{{asset('CSS/images/back-arrow.svg')}}" />
+                    {% endif %}
+                    {% if evolCryptoString == 'decrease+' %}
+                        <img class="imgDecrease" src="{{asset('CSS/images/back-arrow.svg')}}" />
+                    {% endif %}
+                    {% if evolCryptoString == 'increase+' %}
+                        <img class="imgIncrease" src="{{asset('CSS/images/back-arrow.svg')}}" />
+                    {% endif %}
+                    {% if evolCryptoString == 'increase++' %}
+                        <img class="imgIncrease" src="{{asset('CSS/images/back-arrow.svg')}}" /><img class="imgIncrease" src="{{asset('CSS/images/back-arrow.svg')}}" />
+                    {% endif %}
+                </td>
+            {% endfor %}
+            </tr>
+
+        </table>  
+        
+        {% endblock %}
+    </body>
+</html>

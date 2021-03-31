@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "@symfony/stimulus-bridge": "^2.0.0",
+        "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/Resources/assets",
+        "@symfony/webpack-encore": "^1.1.2"
+    },
+    "dependencies": {
+        "webpack-notifier": "^1.13.0"
+    },
+    "scripts": {
+        "encore": "encore"
+    }
+}

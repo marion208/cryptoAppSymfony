@@ -1,0 +1,29 @@
+{# graph.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Evolution des gains{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{asset('CSS/style.css')}}" type="text/css" />
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+
+        <a href="/"><img class="imgCrossSign" src="{{asset('images/cross-sign.svg')}}" /></a>
+        
+        <h1>Vos gains</h1>
+
+        <div class="chart-container">
+        {{ render_chart(chart) }}
+        </div>
+
+        {% endblock %}
+    </body>
+</html>
