@@ -61,7 +61,7 @@ class RemoveTransactionController extends AbstractController
                         // On vérifie que la quantité que l'on possède est suffisante pour la vente
                         if (($sumOfQuantityCrypto + $quantity) < 0) {
                             // Affichage à l'utilisateur d'une erreur concernant la quantité qu'il cherche à vendre, qui n'est pas disponible
-                            $messageOfConfirmation = "Vous chercher à vendre plus de crypto-monnaie que vous n\'en avez. Veuillez revoir la quantité.";
+                            $messageOfConfirmation = "Vous chercher à vendre plus de crypto-monnaie que vous en avez. Veuillez revoir la quantité.";
                         } else {
                             //Initalisation de la transaction à ajouter en base de données
                             $newTransaction = new Transaction($nameCrypto, $currentTime, $quantity, $priceCrypto);
