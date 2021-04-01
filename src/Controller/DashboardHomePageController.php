@@ -22,7 +22,11 @@ class DashboardHomePageController extends AbstractController
         // Si les dernières données ne sont pas du jour-même, on met à jour ces données
         $currentTime = new DateTime('now');
         $dateOfCurrentTime = $currentTime->format('d-m-y');
-        $referenceTimestamp = $evols[0]->getDateEvolutionOfCrypto();
+        if (isset($evols[0])) {
+            $referenceTimestamp = $evols[0]->getDateEvolutionOfCrypto();
+        } else {
+            $referenceTimestamp = 1;
+        }
         $referenceDate = $referenceTimestamp->format('d-m-y');
 
         if ($dateOfCurrentTime != $referenceDate) {
