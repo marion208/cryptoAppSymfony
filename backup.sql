@@ -31,7 +31,7 @@ CREATE TABLE `evolutions_of_cryptos` (
   `average_price_owned` decimal(15,5) NOT NULL,
   `earnings` decimal(10,5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,6 @@ CREATE TABLE `evolutions_of_cryptos` (
 
 LOCK TABLES `evolutions_of_cryptos` WRITE;
 /*!40000 ALTER TABLE `evolutions_of_cryptos` DISABLE KEYS */;
-INSERT INTO `evolutions_of_cryptos` VALUES (1,'BTC',50335.89911,'2021-03-30 21:06:50',0.00000,0.00000,0.00000),(2,'ETH',1574.45386,'2021-03-30 21:06:50',0.00000,0.00000,0.00000),(3,'XRP',0.48344,'2021-03-30 21:06:50',0.00000,0.00000,0.00000);
 /*!40000 ALTER TABLE `evolutions_of_cryptos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-31 14:49:52
+-- Dump completed on 2021-04-01 21:05:50
