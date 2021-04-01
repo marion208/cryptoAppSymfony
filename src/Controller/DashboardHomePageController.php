@@ -25,7 +25,7 @@ class DashboardHomePageController extends AbstractController
         if (isset($evols[0])) {
             $referenceTimestamp = $evols[0]->getDateEvolutionOfCrypto();
         } else {
-            $referenceTimestamp = 1;
+            $referenceTimestamp = new DateTime('1970-01-01 00:00:00');
         }
         $referenceDate = $referenceTimestamp->format('d-m-y');
 
