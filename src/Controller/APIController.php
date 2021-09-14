@@ -19,7 +19,7 @@ class APIController extends AbstractController
 
         $headers = [
             'Accepts: application/json',
-            'X-CMC_PRO_API_KEY: 5fb83aed-4385-4684-9bf3-704b51fc881d'
+            'X-CMC_PRO_API_KEY: '
         ];
         $qs = http_build_query($parameters);
         $request = "{$url}?{$qs}";
